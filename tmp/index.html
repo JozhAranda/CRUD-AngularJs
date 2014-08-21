@@ -1,0 +1,34 @@
+<!--si no hay usuarios que mostrar, con 'ng-show' comprobamos
+el array usuarios y mostramos un mensaje-->
+	<div class="col-md-9 col-md-offset-1" ng-show="usuarios.length == 0">
+		<h3 class="subheader">No hay usuarios para mostrar</h2>
+	</div>
+
+	<div class="col-md-9 col-md-offset-1">
+		<input type="text" class="form-control" ng-model="buscador" ng-show="usuarios.length > 0" placeholder="Buscar"/>
+		<br>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Edad</th>
+					<th>Profesión</th>
+					<th>Teléfono</th>
+					<th>Opciones</th>
+				</tr>
+			</thead>
+			<tbody>
+			    <tr ng-repeat="(id,usuario) in usuarios | filter: buscador">
+					<td>{{ usuario.nombre}}</td>
+					<td>{{ usuario.edad }} años</td>
+					<td>{{ usuario.profesion }}</td>
+					<td>{{ usuario.telefono }}</td>
+					<td>
+						<a href="#/show/{{id}}" class="btn btn-info btn-xs">Ver</a>
+						<a href="#/edit/{{id}}" class="btn btn-success btn-xs">Editar</a>
+						<a href="#/delete/{{id}}" class="btn btn-danger btn-xs">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>

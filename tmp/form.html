@@ -1,0 +1,31 @@
+<form class="form">
+  <div class="col-md-9 col-md-offset-1">
+    <h2 style="margin: 0;margin-bottom: 20px;">{{ textButton }}</h2>
+
+    <div class="row-fluid">
+      <div class="col-md-12">
+        <label>Nombre</label>
+        <input type="text" class="form-control" placeholder="Nombre" ng-model="usuario.nombre" required>
+      </div>
+	  
+      <div class="col-md-4">
+        <label>Edad</label>
+        <input type="number" class="form-control" placeholder="Edad" ng-model="usuario.edad" required>
+      </div>
+	  
+      <div class="col-md-4">
+        <label>Profesión</label>
+        <input type="text" class="form-control" placeholder="Profesión" ng-model="usuario.profesion" required>
+      </div>
+	  
+      <div class="col-md-4">
+        <label>Teléfono</label>
+        <input type="tel" class="form-control" placeholder="Teléfono" ng-model="usuario.telefono" required>
+      </div>
+	  
+	  <button type="submit" class="btn btn-success btn-sm" style="margin: 15px;">{{ textButton }}</button>
+	  <a href="#/" class="btn btn-default btn-sm">Volver al inicio</a>
+	  
+	</div>
+  </div>
+</form>
